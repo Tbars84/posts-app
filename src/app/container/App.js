@@ -8,6 +8,7 @@ import Search from '../components/searchForm/search'
 import OwnerPosts from '../components/posts/ownerPosts'
 import PostItems from '../components/posts/postItems'
 import bg from '../assets/background.svg';
+  
 // ESTILOS GLOBALES
 import './App.css'
 
@@ -22,8 +23,7 @@ class App extends Component {
       postList : [],
     }
   }
-  // EVENTO DE BUSCADOR, EL FILTRO SE REALIZA POR NOMBRE DE USUARIO DE GITHUB
-  search = (name) =>{
+  search = (name) => {
     axios.get(`https://api.github.com/users/${name}/repos?page=1&per_page=30`)
      .then((response) => {
        this.setState({

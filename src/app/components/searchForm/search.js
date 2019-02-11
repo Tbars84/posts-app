@@ -12,6 +12,7 @@ export class Search extends Component {
         // this.setState({ name : '' })
     }
     render() {
+        console.log(this.state.name)
         return (
             <form onSubmit={this.filterApi} id="filterByUser">
                 <div className="filter-wrap">
