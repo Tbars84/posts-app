@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+
 // IMPPORTAR COMPONENTES DE LA LANDING
 import Header from '../components/header/header'
 import Search from '../components/searchForm/search'
 import OwnerPosts from '../components/posts/ownerPosts'
 import PostItems from '../components/posts/postItems'
 import bg from '../assets/background.svg';
-
+// ESTILOS GLOBALES
 import './App.css'
 
 class App extends Component {
@@ -15,13 +16,15 @@ class App extends Component {
     super()
     // SE CREA ESTADOS PARA ASIGNAR LOS VALORES QUE SE MAPEAN EN EL MOMENTO DE USAR EL BUSCADOR
     this.state = {
+      // USUARIO QUE SE BUSCA
       userOwner : {},
-      postList : []
+      // LISTA DE REPOSITORIOS QUE EMULAN LISTA DE POSTS
+      postList : [],
     }
     this.infoLanding = {
       title: 'Blog msco.',
       body: 'Explore the unknown. Uncover what matters. Prototype, test, repeat. Combine intuition with evidence. Design with intent and build it right.'
-    }    
+    }
   }
   // EVENTO DE BUSCADOR, EL FILTRO SE REALIZA POR NOMBRE DE USUARIO DE GITHUB
   search = (name) =>{
@@ -31,14 +34,12 @@ class App extends Component {
           userOwner: response.data[0].owner,
           postList: response.data
         })
-        console.log(this.state.userOwner)
      })
     .catch((error)=>{
        console.log(error);
     });
   }
   render(props) {
-    console.log(typeof this.state.userOwner.avatar_url)
     return (
       <div className="App">
         <Header />
