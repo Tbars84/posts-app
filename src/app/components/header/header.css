@@ -1,0 +1,58 @@
+header {
+    display: flex;
+    width: auto;
+    max-width: 85%;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+  }
+  header > .logo {
+    flex: 10;
+    text-align: left;
+    padding: 1%;
+  }
+  header >.singIn {
+    min-width: 350px;
+    font-weight: 700;
+    font-size: 1.5em;
+    position: relative;
+    cursor: pointer;
+  }
+  header >.singIn > p{
+    padding-bottom: 5%;
+  }
+  .singIn > .loggedIn::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 100%;
+    left: 0;
+    background: #1D1FDD;
+  }
+  .firebaseui-card-content > form{
+    margin-bottom: 0%;
+    margin-top: 0%;
+  }
+  .firebaseui-idp-github{
+    background: #1D1FDD;
+  }
+  
+  @media (max-width: 980px) {
+    header {
+      max-width: 95%;
+      padding-top: 5%;
+    }
+    header >.singIn{
+      font-size: 1.2em;
+    }
+    span.firebaseui-idp-text.firebaseui-idp-text-long {
+      display: none;
+    }
+    header >.singIn {
+      min-width: 120px;
+    }
+    header >.singIn > p{
+      text-align: center;
+    }
+  }

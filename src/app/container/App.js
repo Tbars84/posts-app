@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
-
 // IMPPORTAR COMPONENTES DE LA LANDING
 import Header from '../components/header/header'
 import ContInfo from '../components/containerInfo/contInfo'

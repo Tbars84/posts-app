@@ -1,0 +1,82 @@
+.user-card {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 95%;
+    align-items: center;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    border-bottom: 1px solid rgb(209, 209, 209);
+  }
+  .user--img {
+    margin-right: 5%;
+    max-width: 85px;
+    max-height: 85px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .user--img > img {
+    max-width: 100%;
+  }
+  .user--info{
+    text-align: left;
+  }
+  .user--info > h3{
+    font-family: neuehanskendrickLight;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+  }
+  .user--info > p{
+    font-family: neuehanskendrickLight;
+    font-size: 1.1em;
+    color: #1D1FDD;
+  }
+  article {
+    text-align: left;
+    padding: 4% 0% 2% 1%;
+    max-width: 95%;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+  }
+  article > a{
+    flex: 10;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 1.25em;
+  }
+  article >p.date{
+    font-size: 0.8em;
+    position: absolute;
+    left: 1%;
+    top: 0%;
+    font-family: neuehanskendrickBold;
+    color: #1D1FDD;
+  }
+  article >p.date > span{
+    color: black;
+  }
+  @media (max-width: 420px) {
+    article >p.date{
+      display: none;
+    }
+  }
+  article > button {
+    font-family: neuehanskendrickBold;
+    font-size: 1.1em;
+    text-align: right;
+    display: block;
+    min-width: 120px;
+    color: #1D1FDD;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+    border-bottom: 2px solid #FFFFFF;
+  }
+  article > button:hover {
+    color: rgb(12, 13, 99);
+    border-bottom: 2px solid #1D1FDD;
+  }

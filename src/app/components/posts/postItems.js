@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
+import './posts.css'
 export class PostItems extends Component {
   constructor(props){
     super(props)

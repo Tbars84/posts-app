@@ -5,8 +5,8 @@ import firebase from 'firebase'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import { AUTH_VERIF } from '../../config/config'
 import logo from '../../assets/logo.svg';
+import './header.css'
 firebase.initializeApp(AUTH_VERIF)
-
 
 export class Header extends Component {
   constructor(props){
