@@ -12,11 +12,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
@@ -27,42 +22,30 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Informe code challenge:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Buenos Días, a continuación hago un breve informe donde detallo el trabajo realizado para la prueba entregada por parte de Matter Supply.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Tecnologias usadas: 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- ReactJs(FrontEnd) 
+- Firebase(Backend) 
+- Freenom(Dominio ligado a proyecto en firebase) 
+- Versionamiento del proyecto(Github)
 
-## Learn More
+## Tareas que realiza la app del ejercicio:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Cumple con los requisitos responsive mostrados en el sketch
+Tiene un filtrado de  búsqueda que despliega la información de los repositorios del nombre o nick que se busque
+Organiza la información que trae cada búsqueda de usuario para:
+Crear un card del usuario que se busco con el avatar, el nombre y tipo de usuario
+Desplegar a forma de card de post la información de cada repo, donde el título es el nombre del repositorio, la fecha es la fecha de creación, y el mismo título tiene un link que lleva al repositorio de github
+Tiene sistema de logueo a través de github gracias a la activación del firebase Auth
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Links para ver resultados de la prueba:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Sitio version de desarrollo: https://quickblog.tk
+Repositorio publico en github: https://github.com/Tbars84/posts-app
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

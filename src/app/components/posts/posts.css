@@ -60,11 +60,6 @@
   article >p.date > span{
     color: black;
   }
-  @media (max-width: 420px) {
-    article >p.date{
-      display: none;
-    }
-  }
   article > button {
     font-family: neuehanskendrickBold;
     font-size: 1.1em;
@@ -75,8 +70,27 @@
     cursor: pointer;
     transition: all 100ms ease-in-out;
     border-bottom: 2px solid #FFFFFF;
+    background: transparent;
   }
   article > button:hover {
     color: rgb(12, 13, 99);
     border-bottom: 2px solid #1D1FDD;
+  }
+  @media (max-width: 980px) {
+    .user-card{
+      max-width: 100%;
+      padding: 0% 1% 5% 1%;
+    }
+    .user--info > p{
+      padding-left: 1%;
+    }
+    article {
+      max-width: 100vw;
+      padding: 4% 1% 2% 1%;
+    }
+  }
+  @media (max-width: 420px) {
+    article >p.date{
+      display: none;
+    }
   }
