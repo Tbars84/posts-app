@@ -10,7 +10,6 @@
 
 # production
 /build
-/src/app/config/*
 
 # misc
 .DS_Store
