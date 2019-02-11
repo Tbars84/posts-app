@@ -4,6 +4,7 @@ import axios from 'axios';
 
 // IMPPORTAR COMPONENTES DE LA LANDING
 import Header from '../components/header/header'
+import ContInfo from '../components/containerInfo/contInfo'
 import Search from '../components/searchForm/search'
 import OwnerPosts from '../components/posts/ownerPosts'
 import PostItems from '../components/posts/postItems'
@@ -20,10 +21,6 @@ class App extends Component {
       userOwner : {},
       // LISTA DE REPOSITORIOS QUE EMULAN LISTA DE POSTS
       postList : [],
-    }
-    this.infoLanding = {
-      title: 'Blog msco.',
-      body: 'Explore the unknown. Uncover what matters. Prototype, test, repeat. Combine intuition with evidence. Design with intent and build it right.'
     }
   }
   // EVENTO DE BUSCADOR, EL FILTRO SE REALIZA POR NOMBRE DE USUARIO DE GITHUB
@@ -45,8 +42,7 @@ class App extends Component {
         <Header />
         <div className="container">
             <div className='container--info'>
-                <h1>{this.infoLanding.title}</h1>
-                <p className="subtitle">{this.infoLanding.body}</p>
+                <ContInfo />
                 <Search  search={this.search}/>
                 <OwnerPosts key={this.state.userOwner.id} description={this.state.userOwner.type} userLogin={this.state.userOwner.login} avatarUrl={this.state.userOwner.avatar_url} />
                 {

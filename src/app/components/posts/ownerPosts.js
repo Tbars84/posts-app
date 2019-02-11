@@ -11,16 +11,27 @@ export class OwnerPosts extends Component {
   }
 
   render(props) {
+    console.log(this.userName)
     return (
-      <div className="user-card" >
-        <div className="user--img">
-            <img alt={this.userName} src={this.avatar} />
-        </div>
-        <div className="user--info">
-            <h3>{this.userName}</h3>
-            <p>{this.desc}</p>
-        </div>
-      </div>
+
+        this.userName ? (
+          <div className="user-card" >
+            <div className="user--img">
+                <img alt={this.userName} src={this.avatar} />
+            </div>
+            <div className="user--info">
+                <h3>{this.userName}</h3>
+                <p>{this.desc}</p>
+            </div>
+          </div>  
+        ) 
+        : (
+          <div className="user-card" >
+            <div className="user--info">
+                <p><b>Please write down the nick you wish to search</b></p>
+            </div>
+          </div>
+        )
     )
   }
 }
