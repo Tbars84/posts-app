@@ -10,7 +10,6 @@ export class Search extends Component {
         this.props.search(this.state.name);
         // this.setState({ name : '' })
     }
-
     render() {
         return (
             <form onSubmit={this.filterApi} id="filterByUser">
