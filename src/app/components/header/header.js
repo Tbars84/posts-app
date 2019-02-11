@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 // CONEXION A FIREBASE
 import firebase from 'firebase'
 
@@ -17,11 +18,12 @@ export class Header extends Component {
     // INICIA MAGIA DE FIREBASE
     this.uiConfig = {
       signInFlow: "popup",
+      signInSuccessUrl: '/user',
       signInOptions: [
         firebase.auth.GithubAuthProvider.PROVIDER_ID,
       ],
       callbacks: {
-        signInSuccess: () => false
+        signInSuccess: () => true
       }
     }
   }
@@ -44,8 +46,8 @@ export class Header extends Component {
             </div>
           ) : (
             <StyledFirebaseAuth
-            uiConfig={this.uiConfig}
-            firebaseAuth={firebase.auth()}
+              uiConfig={this.uiConfig}
+              firebaseAuth={firebase.auth()}
             />
           )}
         </div>
