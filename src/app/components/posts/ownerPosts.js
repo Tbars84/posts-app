@@ -12,7 +12,6 @@ export class OwnerPosts extends Component {
   }
 
   render(props) {
-    console.log(this.userName)
     return (
 
         this.userName ? (
