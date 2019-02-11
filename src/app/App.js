@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
+import {BrowserRouter as Router , Route} from 'react-router-dom'
 import axios from 'axios';
 
 // IMPPORTAR COMPONENTES DE LA LANDING
-import Header from '../components/header/header'
-import ContInfo from '../components/containerInfo/contInfo'
-import Search from '../components/searchForm/search'
-import OwnerPosts from '../components/posts/ownerPosts'
-import PostItems from '../components/posts/postItems'
-import bg from '../assets/background.svg';
-  
+import Header from './components/header/header'
+import LandingPage from './container/landingPage'
+import UserSession from './container/userSession'
+import bg from './assets/background.svg';
 // ESTILOS GLOBALES
 import './App.css'
 
@@ -39,18 +37,13 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div className="container">
-            <div className='container--info'>
-                <ContInfo />
-                <Search  search={this.search}/>
-                <OwnerPosts key={this.state.userOwner.id} description={this.state.userOwner.type} userLogin={this.state.userOwner.login} avatarUrl={this.state.userOwner.avatar_url} />
-                {
-                  this.state.postList.map((post)=> {return (
-                        <PostItems key={post.id} postName={post.full_name}  postUrl={post.html_url} posDate={post.created_at}/>
-                      )}
-                  )
-                }
-            </div>
+        <div className="container">  
+            <Router>
+              <div className="container--info">
+                <Route exact path="/" component={LandingPage} />
+                <Route path="/user" component={UserSession} />
+              </div>
+            </Router>
             <div className="container--img">
                 <img src={bg} alt="Background Posts" />
             </div>
