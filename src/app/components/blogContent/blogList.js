@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import './posts.css'
-export class PostItems extends Component {
+import './blogSt.css'
+export class BlogList extends Component {
   constructor(props){
     super(props)
-    this.name = props.postName
-    this.url = props.postUrl
-    this.date = props.posDate
+    this.name = props._postName
+    this.url = props._postUrl
+    this.date = props._posDate
   }
   render(props) {
     return (
@@ -14,16 +14,16 @@ export class PostItems extends Component {
           <p className="date"><span>{this.date} </span></p>
           <a href={this.url}>
             <h4>{this.name}</h4>
-          </a>  
+          </a>
           <button>Read More ...</button>
       </article>
     )
   }
 }
 
-PostItems.propTypes = {
-    postName : PropTypes.string,
-    postUrl : PropTypes.string,
-    posDate : PropTypes.string,
+BlogList.propTypes = {
+    _postName : PropTypes.string,
+    _postUrl : PropTypes.string,
+    _posDate : PropTypes.string,
 }
-export default PostItems
+export default BlogList

@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 // IMPPORTAR COMPONENTES DE LA LANDING
-import ContInfo from '../components/containerInfo/contInfo'
-import Search from '../components/searchForm/search'
-import OwnerPosts from '../components/posts/ownerPosts'
-import PostItems from '../components/posts/postItems'
-
+import ContInfo from '../components/blogContent/containerInfo/contInfo'
+import Search from '../components/blogContent/searchForm/search'
+import BloggerInfo from '../components/blogContent/bloggerSnippet'
+import BlogList from '../components/blogContent/blogList'
 
 export class LandingPage extends Component {
     constructor(props){
@@ -36,14 +35,15 @@ export class LandingPage extends Component {
     render() {
         return (
             <div>
-                <ContInfo />
+                <ContInfo _title='Blog msco.' 
+                _body='Explore the unknown. Uncover what matters. Prototype, test, repeat. Combine intuition with evidence. Design with intent and build it right.' />
                 <Search  search={this.search}/>
-                <OwnerPosts key={this.state.userOwner.id} description={this.state.userOwner.type} userLogin={this.state.userOwner.login} avatarUrl={this.state.userOwner.avatar_url} />
+                <BloggerInfo key={this.state.userOwner.id} description={this.state.userOwner.type} userLogin={this.state.userOwner.login} avatarUrl={this.state.userOwner.avatar_url} />
                 {
-                this.state.postList.map((post)=> {return (
-                        <PostItems key={post.id} postName={post.full_name}  postUrl={post.html_url} posDate={post.created_at}/>
-                    )}
-                )
+                    this.state.postList && this.state.postList.map((post)=> {return (
+                            <BlogList key={post.id} _postName={post.full_name}  _postUrl={post.html_url} _posDate={post.created_at}/>
+                        )}
+                    )
                 }            
             </div>
         )

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-import ContInfo from '../components/containerInfo/contInfo'
-import OwnerPosts from '../components/posts/ownerPosts'
+import ContInfo from '../components/blogContent/containerInfo/contInfo'
+import BloggerInfo from '../components/blogContent/bloggerSnippet'
 import {AUTH_VERIF} from '../config/config'
 
 // INICIALIZO FIREBASE
 firebase.initializeApp(AUTH_VERIF)
 
-export class LoginSesion extends Component {
+export class DashBoard extends Component {
   constructor(props){
     super()
     this.state = { 
@@ -26,7 +26,7 @@ export class LoginSesion extends Component {
       }
     }
   }
-
+  // CARGAR Y VALIDAR DATA PARA LOGUEO
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ 
@@ -44,6 +44,7 @@ export class LoginSesion extends Component {
 
     })
   }
+  // INSERTAR USERLOGIN EN LOCALSTORAGE
   componentDidUpdate(){
     localStorage.setItem('userSession' , JSON.stringify(this.state.userLogin))
   }
@@ -52,8 +53,9 @@ export class LoginSesion extends Component {
       <div>
         {this.state.isSignedIn ? (
           <span>
-            <ContInfo />
-            <OwnerPosts key={this.state.idToken} description={firebase.auth().currentUser.email} userLogin={firebase.auth().currentUser.displayName} avatarUrl={firebase.auth().currentUser.photoURL} />
+            <ContInfo _title='Blog msco.' 
+            _body='Explore the unknown. Uncover what matters. Prototype, test, repeat. Combine intuition with evidence. Design with intent and build it right.' />
+            <BloggerInfo key={this.state.idToken} description={firebase.auth().currentUser.email} userLogin={firebase.auth().currentUser.displayName} avatarUrl={firebase.auth().currentUser.photoURL} />
             {
 
             }
@@ -69,4 +71,4 @@ export class LoginSesion extends Component {
   }
 }
 
-export default LoginSesion
+export default DashBoard

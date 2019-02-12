@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 export class ContInfo extends Component {
     constructor(props){
         super()
-        this.title = 'Blog msco.'
-        this.body = 'Explore the unknown. Uncover what matters. Prototype, test, repeat. Combine intuition with evidence. Design with intent and build it right.'
+        this.title = props._title
+        this.body = props._body
     }
     render(props) {
         return (
@@ -16,4 +16,8 @@ export class ContInfo extends Component {
     }
 }
 
+ContInfo.propTypes = {
+    _title : PropTypes.string,
+    _body : PropTypes.string,
+}
 export default ContInfo

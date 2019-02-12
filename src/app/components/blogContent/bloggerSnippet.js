@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import './posts.css'
+import './blogSt.css'
 
-export class OwnerPosts extends Component {
+export class BloggerInfo extends Component {
 
   constructor(props){
     super(props)
@@ -12,9 +12,9 @@ export class OwnerPosts extends Component {
   }
 
   render(props) {
-    console.log(this.sessionInit);
     return (
-        this.userName ? (
+        this.userName 
+        && this.userName ? (
           <div className="user-card" >
             <div className="user--img">
                 <img alt={this.userName} src={this.avatar} />
@@ -23,9 +23,8 @@ export class OwnerPosts extends Component {
                 <h3>{this.userName}</h3>
                 <p>{this.desc}</p>
             </div>
-          </div>  
-        ) 
-        : (
+          </div>
+        ) : (
           <div className="user-card" >
             <div className="user--info">
                 <p><b>Please write down the nick you wish to search</b></p>
@@ -35,9 +34,9 @@ export class OwnerPosts extends Component {
     )
   }
 }
-OwnerPosts.propTypes = {
+BloggerInfo.propTypes = {
   avatarUrl : PropTypes.string,
   userLogin : PropTypes.string,
   description : PropTypes.string,
 }
-export default OwnerPosts
+export default BloggerInfo
