@@ -1,57 +1,46 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom';
-// CONEXION A FIREBASE
-import firebase from 'firebase'
-
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
-import { AUTH_VERIF } from '../../config/config'
+import {Link} from 'react-router-dom'
 import logo from '../../assets/logo.svg';
 import './header.css'
-firebase.initializeApp(AUTH_VERIF)
+
 
 export class Header extends Component {
   constructor(props){
     super()
-    // ESTADO DE CONEXION
-    this.signedVerif = false
-    this.state = { isSignedIn: false }
-    // INICIA MAGIA DE FIREBASE
-    this.uiConfig = {
-      signInFlow: "popup",
-      signInSuccessUrl: '/user',
-      signInOptions: [
-        firebase.auth.GithubAuthProvider.PROVIDER_ID,
-      ],
-      callbacks: {
-        signInSuccess: () => true
-      }
+    this.state = {
+      verifSession : {}
     }
   }
-  componentDidMount(){
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn: !!user })
-    })    
+  componentWillMount(){
+    localStorage.getItem('userSession') && this.setState({
+      verifSession : JSON.parse(localStorage.getItem('userSession'))
+    })
   }
   render() {
+    console.log(this.state.verifSession)
     return (
       <header>
-        <div className="logo">
-        <img src={logo} alt="Logo" />
-        </div>
-        <div className="singIn">
-        {this.state.isSignedIn ? (
-            <div className="loggedIn">
-                <p>Signed In as {firebase.auth().currentUser.displayName}</p>
-                <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-            </div>
-          ) : (
-            <StyledFirebaseAuth
-              uiConfig={this.uiConfig}
-              firebaseAuth={firebase.auth()}
-            />
-          )}
-        </div>
-      </header>
+        <Link to="/" className="logo">
+          <img src={logo} alt="Logo" />
+        </Link>
+        { this.state.verifSession ? 
+          (
+            <div className="user-card" >
+              <div className="user--img">
+                  <img alt={this.state.verifSession.name} src={this.state.verifSession.avatar} />
+              </div>
+              <div className="user--info">
+                  <h3>{this.state.verifSession.name}</h3>
+                  <button>Log Out</button>
+              </div>
+            </div> 
+          ):(
+            <Link to="/login" className="singIn">
+              <p>Sign in ...</p>
+            </Link>
+          )
+        }
+      </header>    
     )
   }
 }

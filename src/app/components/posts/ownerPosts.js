@@ -12,8 +12,8 @@ export class OwnerPosts extends Component {
   }
 
   render(props) {
+    console.log(this.sessionInit);
     return (
-
         this.userName ? (
           <div className="user-card" >
             <div className="user--img">

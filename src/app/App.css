@@ -46,10 +46,9 @@ p.subtitle{
   flex-basis: 45%;
   max-width: unset;
 }
-
 .container--info{
   padding: 0% 3% 0% 2%; 
-  min-width: 48%;
+  width: 48%;
 }
 .container--img {
   min-width: 45%;

@@ -10,16 +10,28 @@ header {
     flex: 10;
     text-align: left;
     padding: 1%;
+    text-decoration: none;
   }
   header >.singIn {
-    min-width: 350px;
+    min-width: 120px;
     font-weight: 700;
     font-size: 1.5em;
     position: relative;
     cursor: pointer;
+    text-decoration: none;
   }
   header >.singIn > p{
     padding-bottom: 5%;
+    text-align: center;
+  }
+  .singIn > p::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 100%;
+    left: 0;
+    background: #1D1FDD;
   }
   .singIn > .loggedIn::before{
     content: '';
@@ -35,7 +47,7 @@ header {
     margin-top: 0%;
   }
   button.firebaseui-idp-github{
-    background-color: #1D1FDD!important;
+    background-color: #1D1FDD;
   }
   
   @media (max-width: 980px) {
@@ -48,12 +60,6 @@ header {
     }
     span.firebaseui-idp-text.firebaseui-idp-text-long {
       display: none;
-    }
-    header >.singIn {
-      min-width: 120px;
-    }
-    header >.singIn > p{
-      text-align: center;
     }
     .firebaseui-idp-github{
       text-align: center!important;
