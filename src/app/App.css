@@ -65,6 +65,11 @@ p.subtitle{
   }
   .container--info{
     padding: 0;
+    width: 100%;
+  }
+  .container--img {
+    width: 100%;
+    text-align: right;
   }
   article {
     max-width: 100vw;

@@ -2,56 +2,22 @@ import React, { Component } from 'react'
 import SignedInLinks from './signButtons/signedIn'
 import SignedOutLinks from './signButtons/singneOut'
 import { connect } from 'react-redux'
-import { signIn , signOut } from '../../store/actions/actions'
 import './navBarSt.css'
 
 
-export class Header extends Component {
-  
-  constructor(props){
-    super()
-    this.state = {
-      verifLog : false
-    }
-  }
-  loggIn= () => {
-    this.setState({ verifLog: !this.state.verifLog})
-    this.props.signIn()
-  }
-  loggOut = () => {
-    this.setState({ verifLog: !this.state.verifLog})
-    this.props.signOut()
-  }
-
+export class NavBar extends Component {
   render() {
-    return (
-      this.state.verifLog ? 
-        (
-          <SignedInLinks
-            btnLogOut={this.loggOut}
-            // nameUser={this.state.verifSession.name}
-            // avatar={this.state.verifSession.avatar}
-          />
-        ):(
-          <SignedOutLinks btnLogIn={this.loggIn} />
-        )
-    )
+    const { auth } = this.props;
+    console.log(auth)
+    const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
+    return links
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
-  return{
-    authError: state.auth.authError
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
   return {
-    signIn: (creds) => dispatch(signIn(creds)),
-    signOut: () => dispatch(signOut())
+    auth: state.firebase.auth
   }
 }
 
-
-export default connect(mapStateToProps , mapDispatchToProps)(Header)
+export default connect(mapStateToProps , null)(NavBar)

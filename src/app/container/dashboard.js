@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import ContInfo from '../components/blogContent/containerInfo/contInfo'
+import { Redirect } from 'react-router-dom'
 // import BloggerInfo from '../components/blogContent/bloggerSnippet'
 
 
 class DashBoard extends Component {
-  constructor(props){
-    super()
-  }
+
   render() {
+    const { auth } = this.props;
+    console.log(auth)
+    if (!auth.uid) return <Redirect to='/' /> 
+
     return (
       <div>
             <ContInfo _title='Blog msco.' 
@@ -19,5 +23,11 @@ class DashBoard extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
 
-export default DashBoard;
+export default connect(mapStateToProps , null )(DashBoard)
+

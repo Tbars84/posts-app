@@ -16,25 +16,14 @@ export const signIn = (credentials) => {
 
     // GIT PROVIDER SIGNUP
     const providerGith = new firebase.auth.GithubAuthProvider();
-    providerGith.addScope('repo');
+    providerGith.addScope('gist');
     firebase.auth().signInWithPopup(providerGith).then(function(result) {
-      // var token = result.credential.accessToken;
-      // var user = result.user;
-      dispatch({ type : 'LOGIN_SUCCESS'})
+      localStorage.setItem('uidToken', result.credential.accessToken);
+      localStorage.setItem('userRegistered', JSON.stringify(result.user));
+      dispatch({ type : 'LOGIN_SUCCESS' })
     }).catch(function(error) {
-      // var errorCode = error.code;
-      // var errorMessage = error.message;
-      // var email = error.email;
-      // var credential = error.credential;
-
       dispatch({ type : 'LOGIN_ERROR' , error})
-
-      // if (errorCode === 'auth/account-exists-with-different-credential') {
-      //     alert('You have signed up with a different provider for that email.');
-      //   } else {
-      //     console.error(error);
-      //   }
-    });    
+    });
   }
 }
 
