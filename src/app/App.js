@@ -11,7 +11,6 @@ import bg from './assets/background.svg';
 import './App.css'
 
 class App extends Component {
-
   render(props) {
     return (
       <Router>
@@ -19,8 +18,8 @@ class App extends Component {
           <Header />
           <div className="container">  
                 <div className="container--info">
-                  <Route exact path="/" component={LandingPage} />
-                  <Route path="/dashboard" component={DashBoard} />
+                  <Route path="/landingP" component={LandingPage} />
+                  <Route exact path="/" component={DashBoard} />
                   <Route path="/blog/:id" component={BlogDetail} />
                 </div>
               <div className="container--img">

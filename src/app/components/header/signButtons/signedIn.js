@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import logo from '../../assets/logo.svg';
+import logo from '../../../assets/logo.svg';
 
 export class SignedInLinks extends Component {
   render() {
@@ -15,7 +15,7 @@ export class SignedInLinks extends Component {
               </div>
               <div className="user--info">
                   <h3>{this.props.nameUser}</h3>
-                  <button>Log Out</button>
+                  <button onClick={this.props.btnLogOut} >Log Out</button>
               </div>
         </div>
       </header>

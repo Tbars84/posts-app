@@ -1,11 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './app/App'
-import { createStore } from 'redux';
-import rootReducers from './app/store/reducers/rootReducer'
-import { Provider } from 'react-redux'
-const store = createStore(rootReducers);
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware , compose } from "redux";
+import rootReducer from './app/store/reducers'
+import reduxThunk from "redux-thunk";
+import App from "./app/App";
+import registerServiceWorker from "./registerServiceWorker";
+import { reactReduxFirebase , getFirebase} from 'react-redux-firebase'
+import fbConfig from './app/config/fbConfig'
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
+const store = createStore(rootReducer,
+    compose (applyMiddleware(reduxThunk.withExtraArgument({getFirebase})),
+    reactReduxFirebase(fbConfig)
+    )
+);
+
+ReactDOM.render(
+    <Provider store={store}><App /></Provider>, 
+    document.getElementById('root')
+)
+registerServiceWorker();
 
