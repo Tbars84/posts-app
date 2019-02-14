@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserRouter as Router , Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch , Route} from 'react-router-dom'
 
 // IMPPORTAR COMPONENTES DE LA LANDING
 import NavBar from './components/header/navBar'
@@ -14,19 +14,21 @@ class App extends Component {
   render(props) {
     return (
       <Router>
-        <div className="App">
-          <NavBar />
-          <div className="container">  
+        <Switch>
+          <div className="App">
+            <NavBar />
+            <div className="container">  
                 <div className="container--info">
                   <Route exact path="/"  component={LandingPage} />
                   <Route path="/dashBoard" component={DashBoard} />
                   <Route path="/blog/:id" component={BlogDetail} />
                 </div>
-              <div className="container--img">
-                  <img src={bg} alt="Background Posts" />
-              </div>
+                <div className="container--img">
+                    <img src={bg} alt="Background Posts" />
+                </div>
+            </div>
           </div>
-        </div>
+        </Switch>
       </Router>
     )
   }

@@ -7,8 +7,5 @@ const FirebaseConfig = {
 }
 
 firebase.initializeApp(FirebaseConfig);
-// firebase.firestore().settings({ timestampsInSnapshots: true });
-// export const authRef = fbConfig.auth()
-// export const provider = new fbConfig.auth.GithubAuthProvider();
 
 export default firebase 

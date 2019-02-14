@@ -19,16 +19,16 @@ export class LandingPage extends Component {
         }
     }
     search = (name) => {
-    axios.get(`https://api.github.com/users/${name}/repos?page=1&per_page=30`)
-        .then((response) => {
-        this.setState({
-            userOwner: response.data[0].owner,
-            postList: response.data
+        axios.get(`https://api.github.com/users/${name}/repos?page=1&per_page=30`)
+            .then((response) => {
+            this.setState({
+                userOwner: response.data[0].owner,
+                postList: response.data
+            })
         })
-        })
-    .catch((error)=>{
-        console.log(error);
-    });
+        .catch((error)=>{
+            console.log(error);
+        });
     }
         
 
@@ -41,7 +41,7 @@ export class LandingPage extends Component {
                 <BloggerInfo key={this.state.userOwner.id} description={this.state.userOwner.type} userLogin={this.state.userOwner.login} avatarUrl={this.state.userOwner.avatar_url} />
                 {
                     this.state.postList && this.state.postList.map((post)=> {return (
-                            <BlogList key={post.id} _postName={post.full_name}  _postUrl={post.html_url} _posDate={post.created_at}/>
+                            <BlogList key={post.id} _type={'repo'} _postName={post.full_name}  _postUrl={post.html_url} _posDate={post.created_at}/>
                         )}
                     )
                 }            
