@@ -60,7 +60,7 @@
   article >p.date > span{
     color: black;
   }
-  article > button {
+  article > button , article > .edit-gist {
     font-family: neuehanskendrickBold;
     font-size: 1.1em;
     text-align: right;
@@ -72,7 +72,7 @@
     border-bottom: 2px solid #FFFFFF;
     background: transparent;
   }
-  article > button:hover {
+  article > button:hover, article > .edit-gist:hover {
     color: rgb(12, 13, 99);
     border-bottom: 2px solid #1D1FDD;
   }
