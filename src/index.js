@@ -2,21 +2,47 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware , compose } from "redux";
-import rootReducer from './app/store/reducers'
-import reduxThunk from "redux-thunk";
-import App from "./app/App";
+import reducers from './store/reducers/index'
+import thunk from "redux-thunk";
+import App from "./App";
 import { reactReduxFirebase , getFirebase} from 'react-redux-firebase'
-import fbConfig from './app/config/fbConfig'
-import registerServiceWorker from "./registerServiceWorker";
+import fbConfig from './store/fbConfig'
+
  
-const store = createStore(rootReducer,
-    compose (applyMiddleware(reduxThunk.withExtraArgument({getFirebase})),
-    reactReduxFirebase(fbConfig , { attachAuthIsReady: true })
+const store = createStore(reducers,
+    compose (applyMiddleware(thunk.withExtraArgument({getFirebase})),
+    reactReduxFirebase(fbConfig , { attachAuthIsReady: false })
     )
 );
-store.firebaseAuthIsReady.then(() => {
-    ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
-})
-// ReactDOM.render(<App />, document.getElementById('root'))
-registerServiceWorker();
 
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
+
+
+
+
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from './App';
+// import { createStore , applyMiddleware , compose } from 'redux'
+// import { composeWithDevTools } from 'redux-devtools-extension';
+// import { Provider } from 'react-redux'
+// import thunk from 'redux-thunk'
+// import reducers from './store/reducers/reducers'
+// import { reactReduxFirebase , getFirebase} from 'react-redux-firebase'
+// import fbConfig from './store/fbConfig'
+
+// import * as serviceWorker from './serviceWorker';
+
+
+// // CREATING THE STORE WITH REDUX
+// const store = createStore(
+//     reducers,
+//     applyMiddleware(thunk),
+//     reactReduxFirebase(fbConfig , { attachAuthIsReady: true })
+// )
+
+// ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+
+// serviceWorker.unregister();
