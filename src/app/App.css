@@ -33,7 +33,14 @@ button {
   outline: none;
   cursor: pointer;
 }
-
+.loader {
+  max-width: 10%;
+  margin: 0 auto;
+  margin-bottom: 10%;
+}
+.loader > img{
+  max-width: 100%;
+}
 p.subtitle{
   margin-bottom: 5%;
 }

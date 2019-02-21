@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/logo.svg';
 
-class SignedOutLinks extends Component {
-  render(props) {
-    return (
-      <header>
+const SignedOutLinks = (props) => (
+    <header>
       <Link to="/" className="logo">
         <img src={logo} alt="Logo" />
       </Link>
@@ -13,9 +11,6 @@ class SignedOutLinks extends Component {
           <p>Log in ...</p>
       </button>
     </header>
-    )
-  }
-}
-
+)
 
 export default SignedOutLinks
