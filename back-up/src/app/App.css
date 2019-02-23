@@ -1,0 +1,88 @@
+@font-face {
+  font-family: neuehanskendrickBold;
+  src: url(./assets/fonts/neuehanskendrick-bold.woff);
+}
+@font-face {
+  font-family: neuehanskendrickLight;
+  src: url(./assets/fonts/neuehanskendrick-extralight.woff);
+}
+.App {
+  text-align: center;
+  font-size: 14px;
+}
+p, h1, h2, h3 , h4{
+  margin: 0;
+}
+h1{
+  font-family: neuehanskendrickBold;
+  font-size: 5em;
+  color: #1D1FDD;
+  margin-bottom: 5%;
+}
+p{
+  font-family: neuehanskendrickLight;
+  color: #1d1d1d;
+  font-size: 1em;
+  text-align: left;
+}
+button {
+  border: none;
+  display: block;
+  margin: 0;
+  padding: 1%;
+  outline: none;
+  cursor: pointer;
+}
+.loader {
+  max-width: 10%;
+  margin: 0 auto;
+  margin-bottom: 10%;
+}
+.loader > img{
+  max-width: 100%;
+}
+p.subtitle{
+  margin-bottom: 5%;
+}
+.container {
+  width: auto;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 45%;
+  max-width: unset;
+}
+.container--info{
+  padding: 0% 3% 0% 2%; 
+  width: 48%;
+}
+.container--img {
+  min-width: 45%;
+  align-self: flex-start;
+  padding-top: 5%;  
+}
+.container--img > img {
+  max-width: 100%;
+}
+@media (max-width: 980px) {
+  .container {
+    flex-direction: column;
+  }
+  .container--info{
+    padding: 0;
+    width: 100%;
+  }
+  .container--img {
+    width: 100%;
+    text-align: right;
+  }
+  article {
+    max-width: 100vw;
+  }
+  p.subtitle{
+    width: 98%;
+    margin: 0 auto;    
+  }
+}

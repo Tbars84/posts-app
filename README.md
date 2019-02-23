@@ -1,4 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Code Challenge presentado por Camilo Tabares
+
+Buenos dias, este ejercicio hace parte de un code challenge creado por MATTERSUPPLY con la finalidad de probar los skills como desarrollador FRONTEND
+
+### Tecnologias empleadas
+
+- ReactJs/Redux(FrontEnd)
+- Firebase(Backend) 
+- Freenom(Dominio ligado a proyecto en firebase) 
+- Versionamiento del proyecto(Github)
+
+## Tareas que realiza la app del ejercicio:
+
+-Cumple con los requisitos responsive mostrados en el sketch
+
+-En el inicio Tiene un filtrado de  búsqueda que despliega la información de los repositorios del nombre o nick que se busque:
+*Organiza la información que trae cada búsqueda de usuario para:
+*Crear un card del usuario que se busco con el avatar, el nombre y tipo de usuario
+*Desplegar a forma de card de post la información de cada repo, donde el título es el nombre del repositorio, la fecha es la fecha de creación y se encuentra linkeado al repositorio de github
+
+-Tiene sistema de logueo a través de github gracias a la activación del firebase Auth
+*Asincronicamente cambia estados de botony pagina principal donde aparece snippet del usuario
+*Se cargan los gist de la persona, que esta linkeado a una pagina de detalle, en la cual, a través de un plugin que toma el autor y el id del gist para mostrarlo embebido
+
+-Guarda en el ruteo
+*Si la persona de desvincula al sitio en la pagina de detalle se redirecciona imediatamente al inicio, donde se encuentra el buscador 
+
+## Links para ver resultados de la prueba:
+
+Sitio version de desarrollo: https://quickblog.tk
+Repositorio publico en github: https://github.com/Tbars84/posts-app
 
 ## Available Scripts
 
@@ -26,43 +56,3 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

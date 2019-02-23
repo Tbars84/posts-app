@@ -1,0 +1,97 @@
+header > .logo {
+    flex: 10;
+    text-align: left;
+    padding: 1%;
+    text-decoration: none;
+  }
+  header >.singIn {
+    min-width: 120px;
+    font-weight: 700;
+    font-size: 1.5em;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  header >.singIn > p{
+    padding-bottom: 5%;
+    text-align: center;
+  }
+  .singIn > p::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 100%;
+    left: 0;
+    background: #1D1FDD;
+  }
+  .singIn > .loggedIn::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 100%;
+    left: 0;
+    background: #1D1FDD;
+  }
+  .user-card.nav-bar {
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-width: 250px;
+    padding-top: 1%;
+    display: flex;
+  }
+  .user-card.nav-bar > .user--img{
+    max-width: 55px;
+    max-height: 55px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .user-card.nav-bar > .user--img > img{
+    max-width: 100%;
+
+  }
+  .user-card.nav-bar > .user--info{
+    position: relative;
+    text-align: left;
+    margin-left: 5%;
+  }
+  .user-card.nav-bar > .user--info > h3{
+    font-family: neuehanskendrickBold;
+  }
+  .user-card.nav-bar > .user--info > button::before{
+    content: '';
+    width: 100%;
+    height: 2px;
+    top: 100%;
+    position: absolute;
+    background: #1a02e1;
+  }
+  .firebaseui-card-content > form{
+    margin-bottom: 0%;
+    margin-top: 0%;
+  }
+  button.firebaseui-idp-github{
+    background-color: #1D1FDD;
+  }
+  
+  @media (max-width: 980px) {
+    header {
+      max-width: 95%;
+      padding-top: 5%;
+    }
+    header >.singIn{
+      font-size: 1.2em;
+    }
+    span.firebaseui-idp-text.firebaseui-idp-text-long {
+      display: none;
+    }
+    .firebaseui-idp-github{
+      text-align: center!important;
+    }
+    .firebaseui-idp-icon-wrapper{
+      display: inline-block!important;
+    }
+
+  }

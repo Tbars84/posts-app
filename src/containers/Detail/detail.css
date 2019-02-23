@@ -1,0 +1,11 @@
+.container--info{
+    width: 50%;
+}
+h2{
+    font-family: neuehanskendrickBold;
+    font-size: 5em;
+    color: #1D1FDD;
+    margin-bottom: 5%;
+    text-align: left;
+    line-height: 1em;
+}

@@ -1,0 +1,43 @@
+form {
+    width: 65%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+  .filter-wrap{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .filter-wrap > label {
+    position: absolute;
+    z-index: 9;
+    left: 5%;
+    top: 28%;
+    color: #1a02e1;
+  }
+  input.form-filter {
+    outline: none;
+    display: block;
+    position: relative;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    line-height: 45px;
+    padding-left: 11%;
+    background-color: #F5F5F5;
+    color: #a2a2a2;
+    font-size: 1.1em;
+  }
+  button.search-btn{
+    font-family: neuehanskendrickBold;
+    margin-top: 5%;
+    background-color: #1D1FDD;
+    font-size: 1.1em;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 30px;
+    line-height: 40px;
+    width: auto;
+    min-width: 200px;
+  }

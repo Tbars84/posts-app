@@ -1,0 +1,9 @@
+// AUTH ACTIONS TYPES
+export const LOG_PENDING = 'LOG_PENDING'
+export const LOG_SUCCESS = 'LOG_SUCCESS'
+export const LOG_FAILED = 'LOG_FAILED'
+export const LOG_OUT = 'LOG_OUT'
+// HTTPREQUEST ACTIONS TYPES
+export const REQ_PENDING = 'REQ_PENDING'
+export const REQ_SUCCESS = 'REQ_SUCCESS'
+export const REQ_FAILED = 'REQ_FAILED'
