@@ -22,7 +22,6 @@ export class ContentLanding extends Component {
         axios.get(`https://api.github.com/users/${name}/${type}?page=1&per_page=30`)
             .then(response => {
                 this.setState({loaderPost: true})
-                console.log(response)
                 return response.data
             })
             .then(data =>{

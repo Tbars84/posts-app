@@ -16,7 +16,6 @@ class App extends Component {
   }
   render() {
     const{_logProccess} = this.props
-    console.log(_logProccess)
     return (
       <Router>
           <Switch>  
