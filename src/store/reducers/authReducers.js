@@ -8,18 +8,18 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.LOG_PENDING:
+        case actionTypes.LOG_PENDING:{
             return updateObj(state ,{ logProccess: false })
-            break;
-        case actionTypes.LOG_SUCCESS:
+        }
+        case actionTypes.LOG_SUCCESS:{
             return updateObj(state ,{ logProccess: true , user: action.user })
-            break;
-        case actionTypes.LOG_OUT:
+        }
+        case actionTypes.LOG_OUT:{
             return updateObj(state ,{ logProccess: null , user: {} })
-            break;
-        case actionTypes.LOG_FAILED:
+        }
+        case actionTypes.LOG_FAILED:{
             return updateObj(state ,{ logProccess: null , errMsg: action.err })
-            break;
+        }
         default:
             break;
     }

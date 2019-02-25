@@ -18,7 +18,7 @@ export class ContentDetail extends Component {
     }
     render() {
         console.log(this.props.location.search.split('='))
-        this.autor  = this.props.location.search.split('=').filter(function(el , index) {return index == 1});
+        this.autor  = this.props.location.search.split('=').filter(function(el , index) {return index === 1});
         console.log(this.autor)
         return (
             <div className="container">  

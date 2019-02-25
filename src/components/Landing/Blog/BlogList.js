@@ -12,7 +12,7 @@ const BlogList = (props) =>{
             { type === 'gist' ? (
                 <Link to={`/blog/${gistKey}?user=${autor}`} className="edit-gist">Edit ...</Link>
             ):(
-                <a className="link" href={url} target="_blank">Read More ...</a>
+                <a className="link" href={url} target="_blank" rel="noopener noreferrer">Read More ...</a>
             )
             }
         </article>
